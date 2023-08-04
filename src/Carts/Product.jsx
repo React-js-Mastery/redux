@@ -8,6 +8,7 @@ import buds from "../assets/img/buds.jpg";
 import monitor from "../assets/img/monitors.jpg";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import '../assets/css/styles.css'
 
 const Product = () => {
   const cartItem = useSelector((state) => state.Cart.cart);
@@ -15,10 +16,10 @@ const Product = () => {
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-around" }}>
-        <img src={logo} alt="logo" height={100} width={150} />
+        <img className="logo" src={logo} alt="logo" height={100} width={150} />
         <h4>
           {" "}
-          <Link to="/checkout">cart:{cartItem.length}</Link>
+          <Link className="Product-Collections" to="/checkout"><span className="Product-Counting-title">Cart:</span><span className="Product-Counting">{cartItem.length}</span></Link>
         </h4>
       </div>
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
